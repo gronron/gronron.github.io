@@ -17,16 +17,14 @@
 			<ul>  
 			  <li><a class="active" href="#" onclick="switch_tab('dusty');">DUSTY ENGINE</a></li>
 			  <li><a href="#" onclick="switch_tab('aboutme');">ABOUT ME</a></li>
-			  <li id="git"><a href="https://github.com/gronron/dusty" target="_blank">Dusty on GitHub</a></li>
+			  <li id="git"><a href="https://github.com/gronron/dusty">Dusty on GitHub</a></li>
 			</ul>
 		</header>
-
 		<section id="dusty">
 			<h1>Dusty Engine</h1>
 			<p>Dusty is an open source game engine.</p>
 			<br />
 			<br />
-
 			<div class="slideshow">
 				<span class="prev">«</span>
 				<span class="next">»</span>
@@ -40,7 +38,6 @@
 			<br />
 			<hr />
 			<br />
-
 			<div class="desc">
 				<p>Dusty is crossplatform, written in C++, and uses only few crossplaform third party libraries
 				(<a href="https://www.libsdl.org/">SDL</a>, <a href="https://www.opengl.org/">OpenGL</a>, <a href="https://www.khronos.org/opencl/">OpenCL</a> and <a href="https://www.freetype.org/">FreeType</a>).
@@ -51,7 +48,7 @@
 				The computation of the image is still done by the GPU.
 				An acceleration structure (Bounding Volume Hierarchy) reduces the number of object to be computed and improves performance.</p>
 				<br />
-				<p>The physic engine of Dusty is inspired by <a href="http://box2d.org/">Box2D</a> and <a href="http://bulletphysics.org/">Bullet</a>, the collision detection is continuous to prevent tunneling effect.
+				<p>The physics engine of Dusty is inspired by <a href="http://box2d.org/">Box2D</a> and <a href="http://bulletphysics.org/">Bullet</a>, the collision detection is continuous to prevent tunneling effect.
 				Dusty also has a network engine, server-client based, that makes creating a multi player game easy.</p>
 				<br />
 				<p>Currently Dusty is oriented to use voxels, which are really well handled by raytracing.</p>
@@ -59,20 +56,18 @@
 			<br />
 			<hr />
 			<br />
-
 			<div id="ftr">
 				<h2>features:</h2>
 				<br />
 				<ul id="leftftr">
 					<h3>GLOBAL</h3>
 					<li>realtime dynamic raytracer</li>
-					<li>physic engine with continuous collision detection</li>
-					<li>network engine (UDP, server-client based)</li>
-					<li>ingame console with command line interpreter</li>
-					<li>configurable particle systeme</li>
+					<li>physics engine with continuous collision detection</li>
+					<li>network engine (server-client based)</li>
+					<li>configurable particle system</li>
 					<li>voxel engine</li>
 					<li>multhreading</li>
-					<li>SIMD for vector operation</li>
+					<li>SIMD for vectors operations</li>
 				</ul>
 				<ul id="rightftr">
 					<h3>RENDERER</h3>
@@ -83,9 +78,7 @@
 					<li>ambiant occlusion</li>
 				</ul>
 			</div>
-	
 		</section>
-
 		<section id="aboutme" style="display:none">
 			<h1>Hello</h1>
 			<p>I'm Geoffrey TOURON, the developper of Dusty Engine.</p>
@@ -109,12 +102,10 @@
 			<br />
 			<hr />
 		</section>
-
 		<footer>
 			<p>Geoffrey TOURON © 2016</p>
 		</footer>
 	</body>
-	
 	<script language="JavaScript">
 (function()
 {
@@ -155,7 +146,7 @@
 		document.querySelector("header a:hover").classList.add("active");
 	};
 
-	for (index = 0; index < $items.length; ++index)
+	for (index = 0; index < $items.length - 1; ++index)
 	{
 		$items[index].addEventListener("click", function()
 		{

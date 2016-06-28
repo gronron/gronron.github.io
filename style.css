@@ -88,7 +88,7 @@ section
 	position: relative;
 	margin: auto;
 	margin-top: 3em;
-	margin-bottom: 3em;
+	margin-bottom: 4em;
 	overflow: hidden;
 	text-align: center;
 }
@@ -137,7 +137,7 @@ header a
 	text-decoration: none;
 }
 
-header a:hover
+header a:hover, .active
 {
 	border-bottom: 2px solid #ff721f;
 }

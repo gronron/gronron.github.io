@@ -9,7 +9,7 @@
 		<meta name="description" content="Dusty Engine, the open source C++ game engine.">
 		<meta name="keywords" content="C++, raytracer, realtime, game, engine">
 		<meta name="robots" content="index, nofollow">
-		<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0" />
 		<link rel="stylesheet" type="text/css" href="style.css">
 	</head>
 	<body>
@@ -42,7 +42,8 @@
 			<br />
 
 			<div class="desc">
-				<p>Dusty is crossplatform, written in C++, and uses only few crossplaform libraries (SDL, OpenGL, OpenCL and Freetype2).
+				<p>Dusty is crossplatform, written in C++, and uses only few crossplaform third party libraries
+				(<a href="https://www.libsdl.org/">SDL</a>, <a href="https://www.opengl.org/">OpenGL</a>, <a href="https://www.khronos.org/opencl/">OpenCL</a> and <a href="https://www.freetype.org/">FreeType</a>).
 				It is designed to be generic, simple and effective.</p>
 				<br />
 				<p>The particularity of this engine is to feature a raytracer as 3D renderer.
@@ -50,7 +51,7 @@
 				The computation of the image is still done by the GPU.
 				An acceleration structure (Bounding Volume Hierarchy) reduces the number of object to be computed and improves performance.</p>
 				<br />
-				<p>The physic engine of Dusty is inspired by Box2D and Bullet, the collision detection is continuous to prevent tunneling effect.
+				<p>The physic engine of Dusty is inspired by <a href="http://box2d.org/">Box2D</a> and <a href="http://bulletphysics.org/">Bullet</a>, the collision detection is continuous to prevent tunneling effect.
 				Dusty also has a network engine, server-client based, that makes creating a multi player game easy.</p>
 				<br />
 				<p>Currently Dusty is oriented to use voxels, which are really well handled by raytracing.</p>
@@ -98,7 +99,7 @@
 				By developping Dusty, I wanted to try uncommon and challenging things:
 				<ul>
 					<li>-real time raytracing instead of rasterisation</li>
-					<li>-create and edit level without an editor but in game like Sauerbraten or Minecraft</li>
+					<li>-create and edit level without an editor but in game like <a href="http://sauerbraten.org/">Sauerbraten</a> or <a href="https://minecraft.net/">Minecraft</a></li>
 					<li>-a low complexity multi threading systeme, without mutex, focusing on fast execution of small parrallele task</li>
 				</ul>
 				</p>

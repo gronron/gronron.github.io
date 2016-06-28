@@ -1,0 +1,323 @@
+@import url(http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700);
+
+/* ****************** RESET ****************** */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin:	0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* ****************** STYLE ****************** */
+
+body
+{
+	font-family: 'PT Sans Narrow', sans-serif;
+	text-align: center;
+}
+
+hr
+{
+	border: 0;
+	height: 1px;
+	background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.2), rgba(0,0,0,0));
+	background-image: -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.2), rgba(0,0,0,0));
+	background-image: -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.2), rgba(0,0,0,0));
+	background-image: -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.x2), rgba(0,0,0,0));
+}
+
+h1
+{
+	color: #ff721f;
+	text-align: center;
+	font-style: italic;
+	font-size: 2.5em;
+	margin: 0.2em;
+}
+
+h2
+{
+	color: #ff721f;
+	text-align: center;
+	font-style: italic;
+	font-size: 1.8em;
+	text-decoration: underline;
+}
+
+h3
+{
+}
+
+section
+{
+	height: 100%;
+	width: 60%;
+	position: relative;
+	margin: auto;
+	margin-top: 3em;
+	margin-bottom: 3em;
+	overflow: hidden;
+	text-align: center;
+}
+
+::selection
+{
+	color: #1A2530;
+	background: #ff721f;
+}
+
+::-moz-selection	/* Code for Firefox */
+{
+	color: #1A2530;
+	background: #ff721f;
+}
+
+/* ****************** HEADER ****************** */
+
+header
+{
+	z-index: 2;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 2.5em;
+	background-color: #f8f6f6;
+	box-shadow: -1px 1px 6px 1px rgba(0, 0, 0, 0.2);
+}
+
+header ul
+{
+	text-align: center;
+}
+
+header li
+{
+	display: inline-block;
+	list-style: none;
+	margin: 0.25em 0.5em;
+	padding: 0.5em;
+}
+
+header a
+{
+	color: #1A2530;
+	text-decoration: none;
+	font-size: 1.1em;
+}
+
+header a:hover
+{
+	border-bottom: 2px solid #ff721f;
+}
+
+header a.active
+{
+	border-bottom: 2px solid #ff721f; 
+}
+
+#git
+{
+	position: absolute;
+	right: 10%;
+}
+
+/* ****************** FOOTER ****************** */
+
+footer
+{
+	z-index: 2;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	height: 1.5em;
+	color: #ffffff;
+	background-color: #ff721f;
+}
+
+footer p
+{
+	margin-top: 0.2em;
+}
+
+/* ****************** DUSTY ****************** */
+
+.slideshow
+{
+	margin: auto;
+	overflow: hidden;
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	height: 0;
+}
+
+iframe
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+figure
+{
+	position: absolute;
+	opacity: 0;
+	transition: 1s opacity;
+}
+
+figure img
+{
+	width: 100%;
+}
+
+.show
+{
+	opacity: 1;
+	position: static;
+	transition: 1s opacity;
+}
+
+.next, .prev
+{
+	color: #ff721f;
+	position: absolute;
+	background: rgba(255, 255, 255, 0.8);
+	top: 50%;
+	z-index: 1;
+	font-size: 2em;
+	margin-top: -0.75em;
+	opacity: 0.6;
+	user-select: none;
+}
+
+.next:hover, .prev:hover
+{
+	cursor: pointer;
+	opacity: 1;
+}
+
+.next
+{
+	right: 0;
+	padding: 10px 5px 15px 10px;
+	border-top-left-radius: 3px;
+	border-bottom-left-radius: 3px;
+}
+
+.prev
+{
+	left: 0;
+	padding: 10px 10px 15px 5px;
+	border-top-right-radius: 3px;
+	border-bottom-right-radius: 3px;
+}
+
+.desc
+{
+	text-align: justify;
+	text-indent: 5%;
+}
+
+#ftr ul
+{
+	text-align: left;
+	list-style-position: inside;
+	list-style-type: disc;
+}
+
+#leftftr
+{
+	float: left;
+	width: 50%;
+	padding-left: 8%;
+}
+
+#rightftr
+{
+	float: right;
+	width: 33%;
+}
+
+/* ****************** ABOUTME ****************** */
+
+#cv
+{
+	color: #ff721f;
+	text-decoration: none;
+}
+
+#cv:hover
+{
+	border-bottom: 2px solid #ff721f;
+}
+
+/* ****************** RESPONSIVE ****************** */
+
+@media screen and (max-width: 1024px)
+{
+	section
+	{
+		width: 66%;
+	}
+	
+	#leftftr
+	{
+		padding-left: 5%;
+	}
+	
+	#rightftr
+	{
+		width: 35%;
+	}
+}
+
+@media screen and (max-width: 768px)
+{
+	section
+	{
+		width: 75%;
+	}
+	
+	#git
+	{
+		right: 0;
+	}
+}

@@ -1,5 +1,175 @@
-<html>
-<body>
-Welcom to Dusy Engine
-</body>
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<title>Dusty Engine</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta charset="utf-8">
+		<meta name="author" content="Geoffrey TORUON">
+		<meta name="description" content="Dusty Engine, the open source C++ game engine.">
+		<meta name="keywords" content="C++, raytracer, realtime, game, engine">
+		<meta name="robots" content="index, nofollow">
+		<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />
+		<link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+	<body>
+		<header>
+			<ul>  
+			  <li><a class="active" href="#" onclick="switch_tab('dusty');">DUSTY ENGINE</a></li>
+			  <li><a href="#" onclick="switch_tab('aboutme');">ABOUT ME</a></li>
+			  <li id="git"><a href="https://github.com/gronron/dusty" target="_blank">Dusty on GitHub</a></li>
+			</ul>
+		</header>
+
+		<section id="dusty">
+			<h1>Dusty Engine</h1>
+			<p>Dusty is an open source game engine.</p>
+			<br />
+			<br />
+
+			<div class="slideshow">
+				<span class="prev">«</span>
+				<span class="next">»</span>
+				<figure class="show">
+					<iframe src="https://www.youtube.com/embed/UGmM1AlRqjM?rel=0&amp;showinfo=0;autoplay=1" frameborder="0" allowfullscreen></iframe>
+				</figure>
+				<figure>
+					<iframe src="https://www.youtube.com/embed/Z8SukrJTKDM?rel=0&amp;showinfo=0;autoplay=0" frameborder="0" allowfullscreen></iframe>
+				</figure>
+			</div>
+			<br />
+			<hr />
+			<br />
+
+			<div class="desc">
+				<p>Dusty is crossplatform, written in C++, and uses only few crossplaform libraries (SDL, OpenGL, OpenCL and Freetype2).
+				It is designed to be generic, simple and effective.</p>
+				<br />
+				<p>The particularity of this engine is to feature a raytracer as 3D renderer.
+				Raytracing is slower than the classical method (rasterization), but offers a more realistic image by handling natively shadows, reflection, transparency and refraction.
+				The computation of the image is still done by the GPU.
+				An acceleration structure (Bounding Volume Hierarchy) reduces the number of object to be computed and improves performance.</p>
+				<br />
+				<p>The physic engine of Dusty is inspired by Box2D and Bullet, the collision detection is continuous to prevent tunneling effect.
+				Dusty also has a network engine, server-client based, that makes creating a multi player game easy.</p>
+				<br />
+				<p>Currently Dusty is oriented to use voxels, which are really well handled by raytracing.</p>
+			</div>
+			<br />
+			<hr />
+			<br />
+
+			<div id="ftr">
+				<h2>features:</h2>
+				<br />
+				<ul id="leftftr">
+					<h3>GLOBAL</h3>
+					<li>realtime dynamic raytracer</li>
+					<li>physic engine with continuous collision detection</li>
+					<li>network engine (UDP, server-client based)</li>
+					<li>ingame console with command line interpreter</li>
+					<li>configurable particle systeme</li>
+					<li>voxel engine</li>
+					<li>multhreading</li>
+					<li>SIMD for vector operation</li>
+				</ul>
+				<ul id="rightftr">
+					<h3>RENDERER</h3>
+					<li>shadow</li>
+					<li>reflection</li>
+					<li>transparency</li>
+					<li>refraction</li>
+					<li>ambiant occlusion</li>
+				</ul>
+			</div>
+	
+		</section>
+
+		<section id="aboutme" style="display:none">
+			<h1>Hello</h1>
+			<p>I'm Geoffrey TOURON, the developper of Dusty Engine.</p>
+			<br />
+			<hr />
+			<br />
+			<div class="desc">
+				<p>
+				With a curious nature, I have always been intrested in getting a deeper knowledge of how things work which led me to focus in science and in computer science in particular.
+				<br />
+				By developping Dusty, I wanted to try uncommon and challenging things:
+				<ul>
+					<li>-real time raytracing instead of rasterisation</li>
+					<li>-create and edit level without an editor but in game like Sauerbraten or Minecraft</li>
+					<li>-a low complexity multi threading systeme, without mutex, focusing on fast execution of small parrallele task</li>
+				</ul>
+				</p>
+				<br />
+				<p>I'm open to new challenge, you can check my <a id="cv" href="GeoffreyTOURON_cv.pdf">C.V.</a> and feel free to contact me.</p>
+			</div>
+			<br />
+			<hr />
+		</section>
+
+		<footer>
+			<p>Geoffrey TOURON © 2016</p>
+		</footer>
+	</body>
+	
+	<script language="JavaScript">
+(function()
+{
+	var	counter = 0;
+	var	$items = document.querySelectorAll(".slideshow figure");
+	var	numItems = $items.length;
+ 
+	var showCurrent = function()
+	{
+		var itemToShow = Math.abs(counter % numItems);
+
+		for (index = 0; index < $items.length; ++index)
+			$items[index].classList.remove("show");
+		$items[itemToShow].classList.add("show");
+	};
+
+	document.querySelector(".next").addEventListener("click", function()
+	{
+		counter++;
+		showCurrent();
+	}, false);
+	 
+	document.querySelector(".prev").addEventListener("click", function()
+	{
+		counter--;
+		showCurrent();
+	}, false);
+})();
+
+(function()
+{
+	var	$items = document.querySelectorAll("header a");
+ 
+	var	underline = function()
+	{
+		for (index = 0; index < $items.length; ++index)
+			$items[index].classList.remove("active");
+		document.querySelector("header a:hover").classList.add("active");
+	};
+
+	for (index = 0; index < $items.length; ++index)
+	{
+		$items[index].addEventListener("click", function()
+		{
+			underline();
+		}, false);
+	}
+})();
+
+function	switch_tab(tab)
+{
+	var	$items = document.getElementsByTagName("section");
+	for (index = 0; index < $items.length; ++index)
+			$items[index].style.display = "none";
+	
+	document.getElementById(tab).style.display = "";
+}
+	</script>
 </html>
